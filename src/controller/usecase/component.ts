@@ -1,4 +1,6 @@
+import { black } from "cli-color";
 import * as fs from "fs-extra";
+import * as path from "path";
 
 class Component {
   async generateComponent({
@@ -10,11 +12,15 @@ class Component {
   }): Promise<void> {
     try {
       await fs.copy(
-        "./src/files/example-react",
-        `ui.apps/main/content/jcr_root/apps/${nameProject}/components/${name}`
+        path.resolve(__dirname, "../../files/example-react"),
+        `ui.apps/src/main/content/jcr_root/apps/${nameProject}/components/${name}`,
+        (err) => {
+          if (err) {
+            console.log(black.bgRedBright(`Error: ${err.message} 💩`));
+          }
+          console.log(black.bgGreen(`Component ${name} created 🎉!`));
+        }
       );
-
-      console.log(`Congratulations component ${name} created! 🎉`);
     } catch (e) {
       console.log(`Error: ${e} 💩`);
     }
