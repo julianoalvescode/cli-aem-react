@@ -8,7 +8,7 @@ program
   .description(
     "CLI to facilitate the development of React components in Adobe AEM"
   )
-  .version("1.0.0");
+  .version("1.1.1");
 
 program
   .command("generate:component [name] [nameProject]")

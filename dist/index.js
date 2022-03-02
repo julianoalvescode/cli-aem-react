@@ -16,7 +16,7 @@ const program = new commander_1.Command();
 program
     .name("cli-aem-react")
     .description("CLI to facilitate the development of React components in Adobe AEM")
-    .version("1.0.0");
+    .version("1.1.1");
 program
     .command("generate:component [name] [nameProject]")
     .description("Generate a new React component")

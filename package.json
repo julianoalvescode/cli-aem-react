@@ -1,6 +1,6 @@
 {
   "name": "cli-aem-react",
-  "version": "1.0.7",
+  "version": "1.1.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -23,8 +23,7 @@
   },
   "scripts": {
     "start": "node ./dist/index.js",
-    "build": "rimraf ./build && tsc && ncp ./src/files ./dist/files",
-    "publish": "npm run build && npm publish"
+    "build": "rimraf ./build && tsc && ncp ./src/files ./dist/files"
   },
   "bin": {
     "cli-aem-react": "dist/index.js"
